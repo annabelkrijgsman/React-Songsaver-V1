@@ -7,10 +7,7 @@ class SongOverview extends Component {
     constructor() {
       super()
       this.state = {
-        songs: [
-            {id: 1, title: 'Christmas Sweater', artist: 'Michael Buble', genre: 'Christmas', rating: 5},
-            {id: 2, title: 'Changes', artist: 'Tupac', genre: 'Hiphop', rating: 5}
-        ]
+        songs: []
       }
     }
 
@@ -20,12 +17,24 @@ class SongOverview extends Component {
         let genre = document.getElementById('genre').value
         let rating = document.getElementById('rating').value
 
+        let nextId = this.getNextId(this.state.songs)
         this.setState(previousState => ({
             songs: [
                 ...previousState.songs,
-                {title: title, artist: artist, genre: genre, rating: rating}
+                {id: nextId, title: title, artist: artist, genre: genre, rating: rating}
             ]
         }))
+    }
+
+    getNextId = (mySongs) => {
+        let highestId = 0;
+        mySongs.forEach(song => {
+            if (song.id > highestId) {
+                highestId = song.id
+            }
+        })
+        const nextId = highestId + 1
+        return nextId
     }
 
     sortByAscending = () => {
@@ -48,25 +57,25 @@ class SongOverview extends Component {
 
     render() {
       return (
-        <div>
+        <section>
             <SongForm addSong={this.addSong}/>
             <SortSongs sortByAscending={this.sortByAscending} sortByDescending={this.sortByDescending}/>
-            <table style={{width: "100%", textAlign: "left"}}>
+            <table>
                 <thead>
-                    <tr className="song-header">  
-                        <th className="song-row__item">Song</th>
-                        <th className="song-row__item">Artist</th>
-                        <th className="song-row__item">Genre</th>
-                        <th className="song-row__item">Rating</th>
+                    <tr>  
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
                     </tr>
                 </thead>
                 <tbody>
                     <SongList songs={this.state.songs}/>
                 </tbody>
             </table>
-        </div>
-      );
+        </section>
+      )
     }
   }
   
-  export default SongOverview;
+  export default SongOverview

@@ -23,7 +23,7 @@ function SongForm(props) {
                 placeholder="Rating"
                 id="rating"
             />
-            <button onClick={props.addSong}>Submit</button>
+            <button onClick={props.addSong}>Add Song</button>
         </div>
     )
 }

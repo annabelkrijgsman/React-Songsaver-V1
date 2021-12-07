@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+body .App {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+      grid-template-areas: "n n n n n n n n" "m m m m m m m m";
+}
+
+body .App nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-area: n;
+  background-color: #71c174;
+  padding: 10px 0 10px 25px;
+}
+
+body .App nav a {
+  text-decoration: none;
+}
+
+body .App nav a:visited {
+  color: #333;
+}
+
+body .App nav a:hover {
+  color: #333;
+  text-decoration: underline overline;
+}
+
+body .App nav a:active {
+  color: #333;
+}
+
+body .App main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-area: m;
+  text-align: center;
+}
+
+body .App main h1 {
+  margin: 20px;
+}
+
+body .App main section {
+  text-align: center;
+}
+
+body .App main section .add-song-form {
+  margin: 10px;
+}
+
+body .App main section .add-song-form input[type="text"],
+body .App main section .add-song-form input[type="number"] {
+  width: 200px;
+  padding: 3px;
+  margin: 2px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body .App main section .add-song-form button {
+  background-color: #71c174;
+  border: none;
+  color: white;
+  padding: 2px 5px;
+  margin: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+body .App main section .sort-songs {
+  margin: 10px 0 20px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+body .App main section .sort-songs span {
+  margin: 10px;
+  padding: 10px;
+}
+
+body .App main section .sort-songs span label {
+  padding: 0 0 0 5px;
+}
+
+body .App main section table {
+  margin: auto;
+  width: 900px;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+body .App main section table thead th {
+  padding: 5px;
+}
+
+body .App main section table tbody tr:nth-child(even) {
+  background-color: #f1da55;
+}
+
+body .App main section table tbody tr:nth-child(odd) {
+  background-color: #f6e68e;
+}
+
+body .App main section table tbody tr td {
+  padding: 5px;
+}
+
+body .App div.about {
+  margin: auto;
+  width: 50%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+body .App div.about h2 {
+  margin: 20px;
+}
+
+body .App div.about p {
+  margin: 20px;
+}
+
+body .App div.about img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

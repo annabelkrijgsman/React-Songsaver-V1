@@ -1,10 +1,11 @@
 import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom"
 import SongOverview from './Components/SongOverview'
+import Image from './stock-photo.jpg'
 
 function App() {
   return (
-      <div className="App">
+    <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -24,7 +25,7 @@ function Home() {
         <SongOverview />
       </main>
     </>
-  );
+  )
 }
 
 function About() {
@@ -33,15 +34,16 @@ function About() {
       <nav>
         <Link to="/">Home</Link>
       </nav>
-      <main>
-        <h2>Who are we?</h2>
+      <div className="about">
+        <h2>Who am I?</h2>
         <p>
-          That feels like an existential question, don't you
-          think?
+          My name is Annabel. Currently I am following the Winc Acamdemy Full-stack Development course. So far I have had HTML5, CSS3, JavaScript and right now I am practicing React.
+          For React I had to build this Songsaver. Hope you enjoy!
         </p>
-      </main>
+        <img src={Image} alt="Girl Coding" />
+      </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
