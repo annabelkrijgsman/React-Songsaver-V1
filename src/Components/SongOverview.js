@@ -58,21 +58,10 @@ class SongOverview extends Component {
     render() {
       return (
         <section>
+            <h1>Songsaver</h1>
             <SongForm addSong={this.addSong}/>
             <SortSongs sortByAscending={this.sortByAscending} sortByDescending={this.sortByDescending}/>
-            <table>
-                <thead>
-                    <tr>  
-                        <th>Song</th>
-                        <th>Artist</th>
-                        <th>Genre</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <SongList songs={this.state.songs}/>
-                </tbody>
-            </table>
+            <SongList songs={this.state.songs}/>
         </section>
       )
     }
