@@ -1,10 +1,9 @@
 import React from 'react'
+import SongOverview from './Components/SongOverview'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Songsaver</h1>
-    </div>
+      <SongOverview />
   );
 }
 
