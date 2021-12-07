@@ -30,7 +30,7 @@ class SongOverview extends Component {
 
     sortByAscending = () => {
         let sortedAsceding = this.state.songs.sort((a, b) => {
-            return a.artist.localeCompare(b.artist)
+            return a.title.localeCompare(b.title)
         })
         this.setState({
             songs: sortedAsceding
@@ -39,7 +39,7 @@ class SongOverview extends Component {
 
     sortByDescending = () => {
         let sortedDesceding = this.state.songs.sort((a, b) => {
-            return b.artist.localeCompare(a.artist)
+            return b.title.localeCompare(a.title)
         })
         this.setState({
             songs: sortedDesceding
