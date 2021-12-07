@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import SongForm from './SongForm'
 import SongList from './SongList'
+import SortSongs from './SortSongs'
 
 class SongOverview extends Component {
     constructor() {
       super()
       this.state = {
-        songs: []
+        songs: [
+            {id: 1, title: 'Christmas Sweater', artist: 'Michael Buble', genre: 'Christmas', rating: 5},
+            {id: 2, title: 'Changes', artist: 'Tupac', genre: 'Hiphop', rating: 5}
+        ]
       }
     }
 
@@ -24,10 +28,29 @@ class SongOverview extends Component {
         }))
     }
 
+    sortByAscending = () => {
+        let sortedAsceding = this.state.songs.sort((a, b) => {
+            return a.artist.localeCompare(b.artist)
+        })
+        this.setState({
+            songs: sortedAsceding
+        })
+    }
+
+    sortByDescending = () => {
+        let sortedDesceding = this.state.songs.sort((a, b) => {
+            return b.artist.localeCompare(a.artist)
+        })
+        this.setState({
+            songs: sortedDesceding
+        })
+    }
+
     render() {
       return (
         <div>
             <SongForm addSong={this.addSong}/>
+            <SortSongs sortByAscending={this.sortByAscending} sortByDescending={this.sortByDescending}/>
             <table style={{width: "100%", textAlign: "left"}}>
                 <thead>
                     <tr className="song-header">  

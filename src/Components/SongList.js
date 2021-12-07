@@ -4,7 +4,7 @@ function SongList(songs) {
     return (
         Object.values(songs.songs).map(song => {
             return (
-                <tr>
+                <tr key={song.id}>
                     <td>{song.title}</td>
                     <td>{song.artist}</td>
                     <td>{song.genre}</td>
